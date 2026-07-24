@@ -1,4 +1,4 @@
-site_name: Network Observability Runbook
+site_name: Network Observability & Infrastructure Manual
 theme:
   name: material
   palette:
@@ -8,8 +8,16 @@ theme:
     - navigation.tabs
     - navigation.sections
     - content.code.copy
+    - search.suggest
+    - search.highlight
 
 nav:
-  - Home: index.md
+  - Overview: index.md
+  - Architecture: architecture.md
+  - Setup Guide:
+      - Ubuntu Chroot Deployment: setup/ubuntu-chroot.md
   - Standard Operating Procedures:
-      - Add or Remove Target IPs: sops/add-remove-ip.md
+      - Managing Probed Targets: sops/managing-targets.md
+      - Supervisor Operations: sops/supervisor-management.md
+  - Troubleshooting: troubleshooting.md
+  - Reference Manual: reference.md
