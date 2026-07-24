@@ -1,0 +1,15 @@
+site_name: Network Observability Runbook
+theme:
+  name: material
+  palette:
+    primary: indigo
+    accent: indigo
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - content.code.copy
+
+nav:
+  - Home: index.md
+  - Standard Operating Procedures:
+      - Add or Remove Target IPs: sops/add-remove-ip.md
