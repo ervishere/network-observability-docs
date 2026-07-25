@@ -1,39 +1,16 @@
-# Network Observability Runbook
+# Edge AI Network Observability Stack
 
-Welcome to the **Network Observability Runbook** repository!
+This repository contains the Standard Operating Procedures (SOPs), architecture diagrams, and wiki documentation for the locally hosted Network Operations Center (NOC).
 
-This repository houses the complete MkDocs-based documentation for our custom, low-power network observability stack. The system is uniquely built on top of a rooted Android device running an Ubuntu chroot environment, turning it into a dedicated telemetry and alerting appliance.
+## 📌 Core Architecture
+The entire stack runs on an edge device (Realme GT2 / Snapdragon 8 Gen 1) utilizing a native Ubuntu 24.04 chroot.
 
-## 📖 Live Documentation
-**[View the Live Documentation here (via GitHub Pages)](#)** 
-*(Note: Replace `#` with the actual GitHub Pages URL once deployed!)*
+*   **OS/Environment:** PixelOS (Rooted via Magisk), Ubuntu 24.04 Chroot.
+*   **Networking:** Tailscale Mesh (`192.168.0.0/16`), Magisk-based Multi-WAN Failover script.
+*   **Process Management:** Supervisor (replacing systemd).
 
-## 🚀 Features & Architecture
-- **Host**: Android Kernel (Snapdragon 888) -> Ubuntu Chroot
-- **Metrics & Probing**: Prometheus + Blackbox Exporter (ICMP monitoring)
-- **Log Management**: rsyslog + Promtail + Loki
-- **Alerting**: Alertmanager -> Slack Notifications
-- **Visualization**: Grafana
-
-## 🛠️ Repository Structure
-- `mkdocs.yml`: The master configuration file for the MkDocs site (using the Material theme).
-- `docs/`: Contains all Markdown documentation files.
-  - `index.md`: Architecture overview.
-  - `setup/`: Initial deployment guides.
-  - `sops/`: Standard Operating Procedures (e.g., adding/removing target IPs, managing background services).
-  - `troubleshooting.md`: Common issues and their fixes.
-  - `reference.md`: CLI and API cheat sheet.
-- `.github/workflows/deploy-docs.yml`: GitHub Actions pipeline for automated deployment.
-
-## ⚙️ Building Locally
-To preview this documentation on your local machine:
-
-1. Install MkDocs and the Material theme:
-   ```bash
-   pip install mkdocs-material
-   ```
-2. Run the local development server:
-   ```bash
-   mkdocs serve
-   ```
-3. Open `http://127.0.0.1:8000` in your browser.
+## 📚 Documentation Directory
+*   [SOP-001: Chroot Initialization & Tailscale Networking](docs/SOP-001-chroot-tailscale.md)
+*   [SOP-002: Promtail & rsyslog Pipeline Configuration](docs/SOP-002-syslog-pipeline.md)
+*   [SOP-003: Gemini AI Middleware & UI Deployment](docs/SOP-003-ai-middleware.md)
+*   [SOP-004: Proactive Alerting & Cron Scheduling](docs/SOP-004-proactive-alerting.md)
